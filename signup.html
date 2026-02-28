@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>회원가입 — VOID BOT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="VOID BOT Logo" class="logo-img"><span>VOID BOT</span></a>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="install.html">설치</a>
+        <a href="botinfo.html">봇 정보</a>
+        <a href="forum.html">포럼</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <div id="user-area"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>회원가입</h1>
+    <form id="signup-form">
+      <label>아이디<br><input id="signup-username" required></label>
+      <label>비밀번호<br><input id="signup-password" type="password" required></label>
+      <label>표시명<br><input id="signup-display"></label>
+      <div><button class="btn primary" type="submit">회원가입</button> <a href="login.html" class="btn">로그인</a></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 VOID BOT</div>
+  </footer>
+  <script src="assets/app.js"></script>
+  <script>
+    document.getElementById('signup-form').addEventListener('submit',e=>{
+      e.preventDefault();
+      const u=document.getElementById('signup-username').value.trim();
+      const p=document.getElementById('signup-password').value;
+      const d=document.getElementById('signup-display').value.trim()||u;
+      const r=VB.signup(u,p,d);
+      if(!r.ok) return alert(r.msg||'회원가입 실패');
+      location.href='forum.html';
+    })
+  </script>
+</body>
+</html>

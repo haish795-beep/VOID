@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "$2a$10$Q9JqK1q0G1Y0ZQv1zKk6Ze9Qe0VtZQZQ9p1a8Gf/1K1q1ZQZQZQZe",
+      "display": "관리자"
+    },
+    {
+      "id": 2,
+      "username": "haish",
+      "password": "$2a$10$FhDfWVOMFPElJHu.ojVSieum/IrWqkVZHHbsYd/r12/FPobTpQBqS",
+      "display": "haish",
+      "roles": [
+        "manager",
+        "admin",
+        "super"
+      ],
+      "permissions": {
+        "delete_all_posts": true
+      }
+    }
+  ],
+  "posts": [],
+  "bugs": [],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "VOID 공식채팅",
+      "link": "https://open.kakao.com/o/pqDqhxei",
+      "added": "2025-06-03"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>게시글 — VOID BOT 포럼</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="VOID BOT Logo" class="logo-img"><span>VOID BOT</span></a>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="install.html">설치</a>
+        <a href="botinfo.html">봇 정보</a>
+        <a href="commands.html">명령어</a>
+        <a href="rooms.html">설치된 방</a>
+        <a href="bugs.html">버그제보</a>
+        <a href="forum.html">포럼</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <div id="user-area"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="post-root"></div>
+
+    <section style="margin-top:1rem">
+      <h3>댓글</h3>
+      <div id="comments"></div>
+      <form id="comment-form">
+        <label>댓글<br><textarea id="comment-content" rows="3" required></textarea></label>
+        <div><button class="btn primary" type="submit">댓글 작성</button></div>
+      </form>
+    </section>
+    <section style="margin-top:1rem">
+      <div id="post-admin-area"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 VOID BOT</div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

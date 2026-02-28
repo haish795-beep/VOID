@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>버그 제보 — VOID BOT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="VOID BOT Logo" class="logo-img"><span>VOID BOT</span></a>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="install.html">설치</a>
+        <a href="botinfo.html">봇 정보</a>
+        <a href="commands.html">명령어</a>
+        <a href="rooms.html">설치된 방</a>
+        <a href="bugs.html">버그제보</a>
+        <a href="forum.html">포럼</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <div id="user-area"></div>
+    </div>
+  </header>
+
+  <main class="container animate-on-load">
+    <h1>버그 제보</h1>
+    <form id="bug-form">
+      <label>제목<br><input id="bug-title" required></label>
+      <label>설명<br><textarea id="bug-desc" rows="6" required></textarea></label>
+      <div><button class="btn primary" type="submit">제출</button></div>
+    </form>
+
+    <h2 style="margin-top:1.5rem">제출된 리포트</h2>
+    <div id="bugs-list"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 VOID BOT</div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

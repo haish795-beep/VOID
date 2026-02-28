@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>로그인 — VOID BOT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="VOID BOT Logo" class="logo-img"><span>VOID BOT</span></a>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="install.html">설치</a>
+        <a href="botinfo.html">봇 정보</a>
+        <a href="forum.html">포럼</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <div id="user-area"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>로그인</h1>
+    <form id="login-form">
+      <label>아이디<br><input id="login-username" required></label>
+      <label>비밀번호<br><input id="login-password" type="password" required></label>
+      <div><button class="btn primary" type="submit">로그인</button> <a href="signup.html" class="btn">회원가입</a></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 VOID BOT</div>
+  </footer>
+  <script src="assets/app.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit',async e=>{
+      e.preventDefault();
+      const u=document.getElementById('login-username').value.trim();
+      const p=document.getElementById('login-password').value;
+      try{
+        const res = await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:u,password:p})})
+        if(res.ok){ const data = await res.json(); localStorage.setItem('vb_token', data.token); localStorage.setItem('vb_currentUser', JSON.stringify(data.user)); location.href='forum.html'; return }
+      }catch(e){/*ignore*/}
+      // fallback to local VB login
+      const r=VB.login(u,p);
+      if(!r.ok) return alert(r.msg);
+      location.href='forum.html';
+    })
+  </script>
+</body>
+</html>

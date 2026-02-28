@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>포럼 — VOID BOT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="VOID BOT Logo" class="logo-img"><span>VOID BOT</span></a>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="install.html">설치</a>
+        <a href="botinfo.html">봇 정보</a>
+        <a href="commands.html">명령어</a>
+        <a href="rooms.html">설치된 방</a>
+        <a href="bugs.html">버그제보</a>
+        <a href="forum.html">포럼</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <div id="user-area"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cafe-header">
+      <div class="cafe-title">VOID BOT 카페 — 포럼</div>
+      <div>
+        <a class="btn small" href="forum.html">전체</a>
+        <a class="btn small" href="new-post.html">새 글</a>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar animate-on-load">
+        <div class="profile">
+          <div class="avatar"></div>
+          <div class="meta">
+            <div><strong>카페장</strong></div>
+            <div class="muted">VOID BOT 관리자</div>
+          </div>
+        </div>
+        <div class="search-bar"><input placeholder="게시글 검색" id="forum-search"><button class="btn small" id="search-btn">검색</button></div>
+        <div class="category-list" id="category-list">
+          <!-- categories rendered by JS -->
+        </div>
+        <div style="margin-top:1rem"><a class="btn" href="contact.html">문의하기</a></div>
+      </aside>
+
+      <section class="content">
+        <section class="new-post animate-on-load">
+          <h2>새 글 작성</h2>
+          <form id="new-post-form">
+            <label>제목<br><input id="post-title" required></label>
+            <label>본문<br><textarea id="post-body" rows="6" required></textarea></label>
+            <label>태그(쉼표로 구분)<br><input id="post-tags" placeholder="예: 스크립트,샘플"></label>
+            <label>코드(선택)<br><textarea id="post-code" rows="6" placeholder="옵션: 코드 블록을 올리세요"></textarea></label>
+            <div><button class="btn primary" type="submit">작성</button></div>
+          </form>
+        </section>
+
+        <section style="margin-top:1.5rem" class="animate-on-load">
+          <h2>최근 글</h2>
+          <div id="posts-list" class="post-grid"></div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 VOID BOT</div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

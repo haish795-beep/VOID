@@ -1,0 +1,49 @@
+:root{
+  --max-width:1100px;
+  --accent: #9b6bff;
+  --accent-2: #6b8cff;
+  --bg-1: #0b0720;
+  --bg-2: #120426;
+  --surface: rgba(255,255,255,0.03);
+  --muted: #bdb7d8;
+  --text: #eceaf6;
+}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;margin:0;color:var(--text);background:linear-gradient(180deg,var(--bg-1),var(--bg-2));min-height:100vh}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.site-header{background:transparent;backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);text-decoration:none}
+.site-nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+.site-nav a:hover{color:var(--text)}
+.hero{padding:4rem 0;text-align:center}
+.gradient-text{
+  font-size:2.4rem;
+  background:linear-gradient(90deg,var(--accent),#ff6bcb 60%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.actions{margin-top:1rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04);text-decoration:none;color:var(--text);background:transparent}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none;box-shadow:0 8px 30px rgba(107,107,255,0.12)}
+.btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.06);padding:.55rem .9rem;margin-left:.6rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:2rem 0}
+.feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:1rem;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted)}
+
+.bot-card{display:flex;gap:1rem;align-items:center;padding:1rem;background:linear-gradient(135deg,rgba(155,107,255,0.06),rgba(107,140,255,0.03));border-radius:12px;border:1px solid rgba(155,107,255,0.12);box-shadow:0 8px 30px rgba(16,8,32,0.5)}
+.bot-avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;flex:0 0 96px;border:2px solid rgba(255,255,255,0.04);background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.bot-meta h1{margin:0;font-size:1.4rem}
+.bot-meta p{margin:4px 0;color:var(--muted)}
+.unofficial-badge{display:inline-block;margin-top:8px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--accent);font-weight:600;font-size:0.85rem;border:1px solid rgba(155,107,255,0.08)}
+.llk-badge{display:inline-block;margin-left:8px;margin-top:8px;padding:4px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600;font-size:0.85rem;border:1px solid rgba(255,255,255,0.03)}
+.small-note{margin-top:8px;color:var(--muted);font-size:0.95rem}
+
+@media (max-width:700px){
+  .site-nav{display:none}
+  .gradient-text{font-size:1.6rem}
+  .hero{padding:2rem 0}
+  .bot-card{flex-direction:column;align-items:flex-start}
+  .bot-avatar{width:80px;height:80px;flex:0 0 80px}
+}
