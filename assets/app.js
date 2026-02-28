@@ -192,9 +192,7 @@ function initCommands(){
   const list=q('#commands-list')
   if(!list) return
   const cmds = [
-    {cmd:'!help',desc:'도움말을 표시합니다.'},
-    {cmd:'!설정',desc:'설정 마법사를 시작합니다.'},
-    {cmd:'!환영 #채널',desc:'환영 채널을 지정합니다.'}
+    {cmd:'추가중',desc:'추가중.'},
   ]
   list.innerHTML = cmds.map(c=>`<div class="cmd"><code>${c.cmd}</code><div class="desc">${c.desc}</div></div>`).join('')
 }
